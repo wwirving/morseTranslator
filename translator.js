@@ -183,120 +183,137 @@ export const morseToChar = (input) => {
       case "--.":
         outputStr = "g";
         break;
-      case "h":
-        outputStr = "....";
+      case "....":
+        outputStr = "h";
         break;
-      case "i":
-        outputStr = "..";
+      case "..":
+        outputStr = "i";
         break;
-      case "j":
-        outputStr = ".---";
+      case ".---":
+        outputStr = "j";
         break;
-      case "k":
-        outputStr = "-.-";
+      case "-.-":
+        outputStr = "k";
         break;
-      case "l":
-        outputStr = ".-..";
+      case ".-..":
+        outputStr = "l";
         break;
-      case "m":
-        outputStr = "--";
+      case "--":
+        outputStr = "m";
         break;
-      case "n":
-        outputStr = "-.";
+      case "-.":
+        outputStr = "n";
         break;
-      case "o":
-        outputStr = "---";
+      case "---":
+        outputStr = "o";
         break;
-      case "p":
-        outputStr = ".--.";
+      case ".--.":
+        outputStr = "p";
         break;
-      case "q":
-        outputStr = "--.-";
+      case "--.-":
+        outputStr = "q";
         break;
-      case "r":
-        outputStr = ".-.";
+      case ".-.":
+        outputStr = "r";
         break;
-      case "s":
-        outputStr = "...";
-        break;
-      case "t":
-        outputStr = "-";
-        break;
-      case "u":
-        outputStr = "..-";
-        break;
-      case "v":
-        outputStr = "...-";
-        break;
-      case "w":
-        outputStr = ".--";
-        break;
-      case "x":
-        outputStr = "-..-";
-        break;
-      case "y":
-        outputStr = "-.--";
-        break;
-      case "z":
-        outputStr = "--..";
-        break;
-      case ".":
-        outputStr = ".-.-.-";
-        break;
-      case ",":
-        outputStr = "--..--";
-        break;
-      case ":":
-        outputStr = "---...";
-        break;
-      case "?":
-        outputStr = "..--..";
-        break;
-      case "'":
-        outputStr = ".----.";
+      case "...":
+        outputStr = "s";
         break;
       case "-":
-        outputStr = "-....-";
+        outputStr = "t";
         break;
-      default:
-        outputStr = "Please enter an input";
-    }
-  } else if (input.trim().length > 0) {
-    switch (Number(input)) {
-      case 0:
-        outputStr = "-----";
+      case "..-":
+        outputStr = "u";
         break;
-      case 1:
-        outputStr = ".----";
+      case "...-":
+        outputStr = "v";
         break;
-      case 2:
-        outputStr = "..---";
+      case ".--":
+        outputStr = "w";
         break;
-      case 3:
-        outputStr = "...--";
+      case "-..-":
+        outputStr = "x";
         break;
-      case 4:
-        outputStr = "....-";
+      case "-.--":
+        outputStr = "y";
         break;
-      case 5:
-        outputStr = ".....";
+      case "--..":
+        outputStr = "z";
         break;
-      case 6:
-        outputStr = "-....";
+      case ".-.-.-":
+        outputStr = ".";
         break;
-      case 7:
-        outputStr = "--...";
+      case "--..--":
+        outputStr = ",";
         break;
-      case 8:
-        outputStr = "---..";
+      case "---...":
+        outputStr = ":";
         break;
-      case 9:
-        outputStr = "----.";
+      case "..--..":
+        outputStr = "?";
+        break;
+      case ".----.":
+        outputStr = "'";
+        break;
+      case "-....-":
+        outputStr = "-";
+        break;
+      case "-----":
+        outputStr = 0;
+        break;
+      case ".----":
+        outputStr = 1;
+        break;
+      case "..---":
+        outputStr = 2;
+        break;
+      case "...--":
+        outputStr = 3;
+        break;
+      case "....-":
+        outputStr = 4;
+        break;
+      case ".....":
+        outputStr = 5;
+        break;
+      case "-....":
+        outputStr = 6;
+        break;
+      case "--...":
+        outputStr = 7;
+        break;
+      case "---..":
+        outputStr = 8;
+        break;
+      case "----.":
+        outputStr = 9;
         break;
       default:
         outputStr = "Please enter an input";
     }
   }
 
-  return outputStr;
+  return outputStr.toString();
+};
+
+export const makeWord = (input) => {
+  let charArr = input.split(" ");
+  const toWord = charArr.map((morse) => {
+    return morseToChar(morse);
+  });
+  return toWord.join("");
+};
+
+export const makeSentence = (input) => {
+  let morseArr = input.trim().split(" / ");
+  const sentanceArr = morseArr.map((morse) => {
+    return makeWord(morse);
+  });
+
+  let fullSentance = sentanceArr.join(" ");
+
+  const sentanceCapitalized =
+    fullSentance.charAt(0).toUpperCase() + fullSentance.slice(1);
+
+  return sentanceCapitalized;
 };

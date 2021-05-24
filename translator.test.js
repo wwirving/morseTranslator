@@ -3,6 +3,8 @@ import {
   makeMorseWord,
   makeMorseSentence,
   morseToChar,
+  makeWord,
+  makeSentence,
 } from "./translator.js";
 
 describe("testing single Character > morse function", () => {
@@ -69,7 +71,7 @@ describe("testing sentence > morse function", () => {
 describe("testing morse > word character function", () => {
   it("should output a when input string is .- ", () => {
     const result = morseToChar(".-");
-    expect(result).toBe("A");
+    expect(result).toBe("a");
   });
 
   it("should output 1 when input string is .----", () => {
@@ -78,12 +80,36 @@ describe("testing morse > word character function", () => {
   });
 
   it("should output . when input string is .-.-.-", () => {
-    const result = charToMorseCode(".-.-.-");
+    const result = morseToChar(".-.-.-");
     expect(result).toBe(".");
   });
 
   it("should output 'Please enter an input' when input string is blank", () => {
-    const result = charToMorseCode("");
+    const result = morseToChar("");
+    expect(result).toBe("Please enter an input");
+  });
+});
+
+describe("testing morse > word function", () => {
+  it("should output Hello when input string is .... . .-.. .-.. ---", () => {
+    const result = makeWord(".... . .-.. .-.. ---");
+    expect(result).toBe("hello");
+  });
+
+  it("should output 'Please enter an input' when input string is blank", () => {
+    const result = makeWord("");
+    expect(result).toBe("Please enter an input");
+  });
+});
+
+describe("testing morse > sentence function", () => {
+  it("should output Hello world when input string is .... . .-.. .-.. --- / .-- --- .-. .-.. -..", () => {
+    const result = makeSentence(".... . .-.. .-.. --- / .-- --- .-. .-.. -..");
+    expect(result).toBe("Hello world");
+  });
+
+  it("should output 'Please enter an input' when input string is blank", () => {
+    const result = makeSentence("");
     expect(result).toBe("Please enter an input");
   });
 });
