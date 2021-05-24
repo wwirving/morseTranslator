@@ -1,0 +1,24 @@
+{
+  "name": "morse-code-project",
+  "version": "1.0.0",
+  "description": "JS application to translate into Morse Code",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwirving/Morse-Code-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wwirving/Morse-Code-Project/issues"
+  },
+  "homepage": "https://github.com/wwirving/Morse-Code-Project#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.14.2",
+    "babel": "^6.23.0",
+    "jest": "^26.6.3"
+  }
+}
