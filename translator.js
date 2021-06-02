@@ -1,5 +1,5 @@
 export const charToMorseCode = (input) => {
-  let outputStr = "Please enter an input";
+  let outputStr = "Please enter a valid input";
   if (isNaN(input)) {
     switch (input.toLowerCase()) {
       case "a":
@@ -99,7 +99,7 @@ export const charToMorseCode = (input) => {
         outputStr = "-....-";
         break;
       default:
-        outputStr = "Please enter an input";
+        outputStr = "Please enter a valid input";
     }
   } else if (input.trim().length > 0) {
     switch (Number(input)) {
@@ -134,7 +134,7 @@ export const charToMorseCode = (input) => {
         outputStr = "----.";
         break;
       default:
-        outputStr = "Please enter an input";
+        outputStr = "Please enter a valid input";
     }
   }
 
@@ -159,7 +159,7 @@ export const makeMorseSentence = (input) => {
 };
 
 export const morseToChar = (input) => {
-  let outputStr = "Please enter an input";
+  let outputStr = "Please enter a valid input";
   if (isNaN(input)) {
     switch (input.toLowerCase()) {
       case ".-":
@@ -289,7 +289,7 @@ export const morseToChar = (input) => {
         outputStr = 9;
         break;
       default:
-        outputStr = "Please enter an input";
+        outputStr = "Please enter a valid input";
     }
   }
 

@@ -28,9 +28,9 @@ describe("testing single Character > morse function", () => {
     expect(result).toBe(".-.-.-");
   });
 
-  it("should output 'Please enter an input' when input string is blank", () => {
+  it("should output 'Please enter a valid input' when input string is blank", () => {
     const result = charToMorseCode("");
-    expect(result).toBe("Please enter an input");
+    expect(result).toBe("Please enter a valid input");
   });
 });
 
@@ -45,9 +45,9 @@ describe("testing word > morse function", () => {
     expect(result).toBe("..--- ----- ..--- -----");
   });
 
-  it("should output 'Please enter an input' when input string is blank", () => {
+  it("should output 'Please enter a valid input' when input string is blank", () => {
     const result = charToMorseCode("");
-    expect(result).toBe("Please enter an input");
+    expect(result).toBe("Please enter a valid input");
   });
 });
 
@@ -62,9 +62,9 @@ describe("testing sentence > morse function", () => {
     expect(result).toBe(".... . .-.. .-.. --- / ..--- ----- ..--- -----");
   });
 
-  it("should output 'Please enter an input' when input string is blank", () => {
+  it("should output 'Please enter a valid input' when input string is blank", () => {
     const result = charToMorseCode("");
-    expect(result).toBe("Please enter an input");
+    expect(result).toBe("Please enter a valid input");
   });
 });
 
@@ -84,9 +84,9 @@ describe("testing morse > word character function", () => {
     expect(result).toBe(".");
   });
 
-  it("should output 'Please enter an input' when input string is blank", () => {
+  it("should output 'Please enter a valid input' when input string is blank", () => {
     const result = morseToChar("");
-    expect(result).toBe("Please enter an input");
+    expect(result).toBe("Please enter a valid input");
   });
 });
 
@@ -96,9 +96,9 @@ describe("testing morse > word function", () => {
     expect(result).toBe("hello");
   });
 
-  it("should output 'Please enter an input' when input string is blank", () => {
+  it("should output 'Please enter a valid input' when input string is blank", () => {
     const result = makeWord("");
-    expect(result).toBe("Please enter an input");
+    expect(result).toBe("Please enter a valid input");
   });
 });
 
@@ -108,8 +108,8 @@ describe("testing morse > sentence function", () => {
     expect(result).toBe("Hello world");
   });
 
-  it("should output 'Please enter an input' when input string is blank", () => {
+  it("should output 'Please enter a valid input' when input string is blank", () => {
     const result = makeSentence("");
-    expect(result).toBe("Please enter an input");
+    expect(result).toBe("Please enter a valid input");
   });
 });

@@ -1,69 +1,114 @@
+@font-face {
+  font-family: "Pilowlava";
+  src: url("./assets/fonts/Pilowlava-Regular.woff");
+}
+@font-face {
+  font-family: "HappyItal";
+  src: url("./assets/fonts/happy-times-NG_italic_master_web.woff");
+}
+@font-face {
+  font-family: "HappyReg";
+  src: url("./assets/fonts/happy-times-NG_regular_master_web.woff");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", Courier, monospace;
+  font-family: "HappyItal", "Arial", Courier, monospace;
+  background-color: #EAEAEA;
 }
 
 h1 {
   text-align: center;
-  font-family: "Arial", Courier, monospace;
-  margin-top: 5%;
+  font-family: "HappyItal", Courier, monospace;
+  font-size: 5vw;
 }
 
-.container {
-  display: flex;
-  margin-top: 3%;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100vw;
-}
-
-#button {
-  display: block;
+textarea {
   width: 100%;
-  margin-top: 10%;
-  height: 50px;
-  border-radius: 30px;
-}
-
-#switch {
-  display: block;
-  width: 100%;
-  margin-top: 10%;
-  height: 50px;
-  border-radius: 30px;
+  height: 100%;
 }
 
 #textInput {
-  height: 200px;
-  width: 40vw;
   text-align: center;
-  border-radius: 30px;
+  border: none;
+  color: black;
+  font-size: 4vw;
+  outline: none;
+  text-transform: uppercase;
+  width: 80vw;
+  height: 80%;
 }
 
-h4 {
-  font-style: italic;
-  margin-top: 40px;
-  margin-bottom: 50px;
-  font-size: 2vw;
+.morseoutput {
+  overflow: scroll;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
 }
 
-.display {
+.output {
+  word-wrap: break-word;
+  text-align: center;
+  max-width: 90%;
   font-size: 5vw;
+  font-family: "Pilowlava";
+}
+
+.morsecontainer {
+  overflow-y: scroll;
+  word-wrap: break-word;
 }
 
 .centerline {
   display: grid;
-  grid-template-columns: 4fr 1fr 2fr 1fr 2fr 1fr 4fr;
+  grid-template-columns: 4fr 1fr 2fr 1fr 4fr;
   grid-template-rows: 1fr;
   align-items: center;
+  width: 100vw;
 }
 
 .line {
   background-color: black;
   height: 1px;
+  width: 100%;
+}
+
+.topline {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgbox > svg {
+  background: transparent;
+  width: 100%;
+  height: auto;
+}
+
+.maincont {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 0.0001fr 4fr 0.5fr 4fr;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.textinput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /*# sourceMappingURL=main.css.map */
