@@ -15,7 +15,7 @@ describe("testing single Character > morse function", () => {
 
   it("should output .- when input string is a (lowercase)", () => {
     const result = charToMorseCode("a");
-    expect(result).toBe(".-");
+    expect(result).toBe("x");
   });
 
   it("should output .---- when input string is 1", () => {

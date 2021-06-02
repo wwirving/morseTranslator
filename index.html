@@ -5,64 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Morse Code Translator</title>
+    <link rel="stylesheet" href="./main.css" />
   </head>
   <body>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Arial", Courier, monospace;
-      }
-      h1 {
-        text-align: center;
-        font-family: "Arial", Courier, monospace;
-        margin-top: 5%;
-      }
-      .container {
-        display: flex;
-        margin-top: 3%;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 100vw;
-      }
-
-      #button {
-        display: block;
-        width: 100%;
-        margin-top: 10%;
-        height: 50px;
-        border-radius: 30px;
-      }
-
-      #switch {
-        display: block;
-        width: 100%;
-        margin-top: 10%;
-        height: 50px;
-        border-radius: 30px;
-      }
-
-      #textInput {
-        height: 200px;
-        width: 40vw;
-        text-align: center;
-        border-radius: 30px;
-      }
-
-      h4 {
-        font-style: italic;
-        margin-top: 40px;
-        margin-bottom: 50px;
-        font-size: 2vw;
-      }
-
-      .display {
-        font-size: 5vw;
-      }
-    </style>
-    <h1>Morse Code Translator</h1>
+    <div class="centerline">
+      <div class="line"></div>
+      <div class="svgbox">
+        <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="59.9995" width="60" height="60" transform="rotate(89.7615 59.9995 0)" fill="black"/>
+          <path d="M29.8771 13.0775L51.4054 46.89L8.11682 46.7557L29.8771 13.0775Z" fill="#EAEAEA"/>
+          </svg>
+          
+      </div>
+      <div class="line"></div>
+      <div class="svgbox">
+        <svg width="61" height="61" viewBox="0 0 61 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="59.9995" width="60" height="60" transform="rotate(89.7615 59.9995 0)" fill="black"/>
+          <ellipse cx="30.651" cy="30.1224" rx="28.9474" ry="29.4737" transform="rotate(89.7615 30.651 30.1224)" fill="#EAEAEA"/>
+          </svg>
+          
+        </svg>
+      </div>
+      <div class="line"></div>
+      <div class="svgbox">
+        <svg width="61" height="64" viewBox="0 0 61 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="60.1179" y="6.36572" width="57" height="60" transform="rotate(90 60.1179 6.36572)" fill="black"/>
+          <path d="M30.9917 56.2142L6.06704 14.1367L56.2051 14.2922L30.9917 56.2142Z" fill="#EAEAEA"/>
+          </svg>
+          
+          
+      </div>
+      <div class="line"></div>
+    </div>
+    <!-- <h1>Morse Code Translator</h1>
     <div class="container">
       <form>
         <input type="text" placeholder="Type English here..." id="textInput" />
@@ -71,7 +46,7 @@
         <h4>Your Translation is ...</h4>
         <div class="display"></div>
       </form>
-    </div>
+    </div> -->
 
     <script src="./translator.js" type="module"></script>
     <script src="./script.js" type="module"></script>
