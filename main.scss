@@ -12,19 +12,39 @@
   src: url("./assets/fonts/happy-times-NG_regular_master_web.woff");
 }
 
+textarea::-webkit-input-placeholder {
+  color: white;
+}
+
+textarea:-moz-placeholder { /* Firefox 18- */
+  color: white;
+}
+
+textarea::-moz-placeholder {  /* Firefox 19+ */
+  color: white;
+}
+
+textarea:-ms-input-placeholder {
+  color: white;
+}
+textarea::placeholder {
+  color: white; 
+}
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "HappyItal","Arial", Courier, monospace;
-  background-color: #EAEAEA;
+  background-color: black;
 }
 
 h1 {
   text-align: center;
   font-family: "HappyItal", Courier, monospace;
   font-size: 5vw;
+  color: white;
 }
 
 textarea {
@@ -35,7 +55,7 @@ textarea {
 #textInput {
   text-align: center;
   border: none;
-  color: black;
+  color: white;
   font-size: 4vw;
   outline: none;
   text-transform: uppercase;
@@ -43,8 +63,16 @@ textarea {
   height: 80%;
 }
 
+textarea {
+  color: white;
+}
+
 .morseoutput {
   overflow: scroll;
+  font-family: "Pilowlava";
+  font-size: 5vw;
+  color: white;
+  letter-spacing: 10px;
 
   word-wrap: break-word;
   display: flex;
@@ -52,6 +80,7 @@ textarea {
   align-items: center;
   justify-content: center;
   height: 80%;
+  text-align: center;
 }
 
 .output {
@@ -77,11 +106,17 @@ textarea {
 }
 
 .line {
-  background-color: black;
+  background-color: white;
   height: 1px;
   width: 100%;
 }
 
+.linetop {
+  background-color: white;
+  height: 1px;
+  width: 100%;
+  margin-top: 10px;;
+}
 
 .topline {
   display: flex;
@@ -94,6 +129,11 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  & > h1 {
+    
+
+  }
 }
 
 
@@ -106,7 +146,7 @@ textarea {
 .maincont {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 0.0001fr 4fr 0.5fr 4fr;
+  grid-template-rows:0.0001fr 1fr 0.0001fr 4fr 0.5fr 4fr;
   height: 100vh;
   align-items: center;
   justify-content: center;

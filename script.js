@@ -26,21 +26,39 @@ button.addEventListener("click", () => {
     textInput.style.fontFamily = "HappyItal"
     removeNode(display);
     textInput.value = '';
+    display.textContent = '';
     hasTranslated = false;
   } else if (hasTranslated === false) {
     
     word = textInput.value;
   
     if (switchOrder === "default" && textInput.value.length >= 1) {
+     
       result = makeMorseSentence(word);
+
+
+      var i = 0;
+
+      runner();
+
+      function runner() {
+      display.append(result.charAt(i));
+      i++;
+      setTimeout(
+        function() {
+          if (i < result.length)
+            runner();
+          else {
+            i = 0;
+          }
+        }, Math.floor(Math.random() * 500) + 2);
+      }
 
       if (result.includes('Please enter a valid input')){
         result = 'Please enter a valid input'
 
       }
-  
-  
-      createNode(result, display, "Pilowlava" );
+
       hasTranslated = true;
     } else if (switchOrder === "morse" && textInput.value.length >= 1) {
       result = makeSentence(word);
@@ -49,8 +67,24 @@ button.addEventListener("click", () => {
         result = 'Please enter a valid input'
 
       }
+
+      var i = 0;
+
+      runner();
+
+      function runner() {
+      display.append(result.charAt(i));
+      i++;
+      setTimeout(
+        function() {
+          if (i < result.length)
+            runner();
+          else {
+            i = 0;
+          }
+        }, Math.floor(Math.random() * 500) + 2);
+      }
   
-      createNode(result, display, "HappyItal");
       hasTranslated = true;
     } else {
       result = 'Please enter a valid input'
@@ -118,3 +152,4 @@ const removeNode = (outputContainer) => {
   }
   
 }
+
