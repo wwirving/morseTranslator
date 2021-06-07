@@ -4,6 +4,14 @@ import {
   makeSentence,
 } from "./translator.js";
 
+const rain = new Howl({
+  src: "./assets/sounds/rain.wav",
+  volume: 0.25,
+  loop: true,
+});
+
+rain.play();
+
 const dot = new Howl({
   src: "./assets/sounds/dot.mp3",
   volume: 0.5,
@@ -20,9 +28,9 @@ const tuna = new Tuna(Howler.ctx);
 
 const delay = new tuna.PingPongDelay({
   wetLevel: 0.2, //0 to 1
-  feedback: 0.3, //0 to 1
-  delayTimeLeft: 800, //1 to 10000 (milliseconds)
-  delayTimeRight: 600, //1 to 10000 (milliseconds)
+  feedback: 0.85, //0 to 1
+  delayTimeLeft: 300, //1 to 10000 (milliseconds)
+  delayTimeRight: 500, //1 to 10000 (milliseconds)
 });
 
 Howler.addEffect(delay);
@@ -76,7 +84,7 @@ button.addEventListener("click", () => {
           else {
             i = 0;
           }
-        }, Math.floor(Math.random() * 1000) + 2);
+        }, Math.floor(Math.random() * 1500) + 2);
       }
 
       if (result.includes("Please enter a valid input")) {
